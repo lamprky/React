@@ -5,9 +5,10 @@ import {
   BrowserRouter,
   Link,
 } from 'react-router-dom';
-import Home from './home.js';
-import Favorite from './favorite.js';
-import logo from './logo.svg';
+import Search from './search/search.js';
+import Home from './home/home.js';
+import Favorite from './favorites/favorite.js';
+import logo from './images/logo.svg';
 
 
 class App extends React.Component {
@@ -43,7 +44,7 @@ class App extends React.Component {
   onInputChange(event) {
     this.setState({
       searchText: event.target.value,
-      artists: []
+      //artists: []
     });
   }
 
@@ -61,7 +62,7 @@ class App extends React.Component {
         });
         this.setState({ artists: artistResponse });
       })
-      .catch(error => alert('pffff'));
+      .catch(error => alert('Error receiving data from DB'));
   }
 
   render() {
@@ -74,12 +75,12 @@ class App extends React.Component {
         <div>
           <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <a className="navbar-brand" href="#">
-                <img src={logo} alt="logo" width="30" height="30" />
-              </a>
+              <Link to='/' className="navbar-brand">
+                <img src={logo} alt="logo" width="30" height="30" /> Home
+              </Link>
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                  <Link to='/' className="nav-link">Home</Link>
+                  <Link to='/search' className="nav-link">Search</Link>
                 </li>
                 <li className="nav-item">
                   <Link to='/favorite' className="nav-link">Favorite {counter}</Link>
@@ -87,8 +88,12 @@ class App extends React.Component {
               </ul>
             </div>
           </nav>
+          
           <Route exact path='/' render={() => {
-            return <Home
+            return <Home />
+          }} />
+          <Route path='/search' render={() => {
+            return <Search
               onInputChange={this.onInputChange}
               onSearch={this.onSearch}
               artists={this.state.artists}

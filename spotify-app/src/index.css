@@ -20,6 +20,11 @@ body {
   padding:10px !important;
 }
 
+.padding-right{
+  padding-right:25px !important;
+}
+
+
 .height-200{
   height:200px
 }
@@ -35,4 +40,8 @@ body {
 
 .heart.red{
   color:#e11313;
+}
+
+.text-align-right{
+  text-align: right;
 }
