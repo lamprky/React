@@ -18,12 +18,20 @@ class Actions extends React.Component {
                         onFiltering={this.props.onFiltering}
                         sortBy={this.props.sortByAsc} />
 
-                    <div className="col bordered padding rounded margin-right margin-top">
-                        <h4>Step 4. Add to Favorites</h4>
-                        <br />
-                        <div className="glyphicon glyphicon-heart heart bordered rounded red"
-                            title="Add to favorites">
-                            &hearts;
+                    <div className="col-6 col-sm-6 col-md-3 col-lg-3">
+                        <div className="row bordered padding rounded margin-right margin-top">
+                            <div className="col-12">
+                                <h5>Step 4.</h5>
+                                <h4> Add to Favorites</h4>
+                            </div>
+
+                            <div className="col-12 padding-0">
+                                <em className="btn">Click on icon</em>
+                                <div className=" glyphicon glyphicon-heart heart bordered rounded red"
+                                    title="Add to favorites">
+                                    &hearts;
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

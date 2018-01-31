@@ -74,10 +74,11 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className=" navbar-collapse" id="navbarSupportedContent">
               <Link to='/' className="navbar-brand">
                 <img src={logo} alt="logo" width="30" height="30" /> Home
               </Link>
+
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
                   <Link to='/search' className="nav-link">Search</Link>
@@ -88,7 +89,7 @@ class App extends React.Component {
               </ul>
             </div>
           </nav>
-          
+
           <Route exact path='/' render={() => {
             return <Home />
           }} />
