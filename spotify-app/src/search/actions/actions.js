@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './search.js';
-import SortFilter from './sortFilter.js';
+import Filter from './filter.js';
+import Sort from './sort.js';
 
 class Actions extends React.Component {
     render() {
@@ -11,12 +12,14 @@ class Actions extends React.Component {
                         onInputChange={this.props.onInputChange}
                         onSearch={this.props.onSearch} />
 
-                    <SortFilter onSort={this.props.onSort}
+                    <Filter onFiltering={this.props.onFiltering} />
+
+                    <Sort onSort={this.props.onSort}
                         onFiltering={this.props.onFiltering}
                         sortBy={this.props.sortByAsc} />
 
                     <div className="col bordered padding rounded">
-                        <h4>Step 3. Add to Favorites</h4>
+                        <h4>Step 4. Add to Favorites</h4>
                         <br />
                         <div className="glyphicon glyphicon-heart heart bordered rounded red"
                             title="Add to favorites">

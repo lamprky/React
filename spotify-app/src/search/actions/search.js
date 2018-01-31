@@ -6,13 +6,13 @@ class Search extends React.Component {
             <div className="col bordered padding rounded margin-right">
                 <h4>Step 1. Search Band</h4>
                 <br />
-                <div className=" form-inline">
+                <div className="form-group">
                     <input type="text" onChange={this.props.onInputChange}
-                        className="form-control mr-sm-2"
+                        className="form-control"
                         placeholder="Search">
                     </input>
                     <button onClick={this.props.onSearch}
-                        className="btn btn-outline-success my-2 my-sm-0">
+                        className="btn btn-success">
                         Search
                     </button>
                 </div>
