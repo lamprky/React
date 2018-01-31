@@ -18,7 +18,7 @@ class Actions extends React.Component {
                         onFiltering={this.props.onFiltering}
                         sortBy={this.props.sortByAsc} />
 
-                    <div className="col bordered padding rounded">
+                    <div className="col bordered padding rounded margin-right margin-top">
                         <h4>Step 4. Add to Favorites</h4>
                         <br />
                         <div className="glyphicon glyphicon-heart heart bordered rounded red"

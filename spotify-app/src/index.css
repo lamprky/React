@@ -24,10 +24,19 @@ body {
   padding-right:25px !important;
 }
 
+.padding-0
+{
+  padding:0 !important;
+}
 
 .height-200{
   height:200px
 }
+
+.height-330{
+  min-height:330px
+}
+
 .heart{
   cursor:pointer;
   float: right;
