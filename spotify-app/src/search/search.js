@@ -7,7 +7,7 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {           
+        this.state = {
             artists: props.artists,
             sortByAsc: false,
             displayOption: {
@@ -28,21 +28,30 @@ class Search extends React.Component {
     }
 
     onSort() {
-        let sortedList = this.state.artists.sort(function (obj1, obj2) {
-            return obj1.name - obj2.name;
-        });
+        let sortedList = this.state.artists.sort(this.compare);
+
+        if (this.state.sortByAsc)
+            sortedList = sortedList.reverse();
+
         this.setState({
             artists: sortedList,
             sortByAsc: !this.state.sortByAsc
         });
     }
 
+    compare(a, b) {
+        if (a.name < b.name)
+            return -1;
+        if (a.name > b.name)
+            return 1;
+        return 0;
+    }
+
     onFiltering(event) {
         const textInserted = event.target.value.toLowerCase();
         const filteredResults = this.props.artists.filter((artist) => {
             return artist.name.toLowerCase().includes(textInserted);
-        }
-        );
+        });
         this.setState({
             artists: filteredResults
         });
