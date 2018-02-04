@@ -7,20 +7,20 @@ class Artists extends React.Component {
     displayArtists() {
         const dispOption = this.props.displayOption;
 
-        return this.props.artists.map((artist, index) => {          
+        return this.props.artists.map((artist, index) => {
             return (
-                dispOption.list 
-                ?
-                <ArtistList artist={artist}
-                    key={artist.id}
-                    onSelectedHeart={this.props.onSelectedHeart}
-                />
-                :
-                <ArtistGrid artist={artist}
-                    key={artist.id}
-                    onSelectedHeart={this.props.onSelectedHeart}
-                    columns={(dispOption.grid3) ? 3 : 4}
-                />
+                dispOption.list
+                    ?
+                    <ArtistList artist={artist}
+                        key={artist.id}
+                        onSelectedHeart={this.props.onSelectedHeart}
+                    />
+                    :
+                    <ArtistGrid artist={artist}
+                        key={artist.id}
+                        onSelectedHeart={this.props.onSelectedHeart}
+                        columns={(dispOption.grid3) ? 3 : 4}
+                    />
             )
         });
     }
